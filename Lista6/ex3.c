@@ -4,6 +4,7 @@ geral de uma determinada turma. O protótipo desta função é o seguinte: float
 
 #include<stdio.h>
 #include<stdlib.h>
+#include <string.h>
 
 typedef struct aluno{
 char nome[31];
@@ -11,11 +12,13 @@ char mat[10], turma[3];
 float p1, p2;
 }TALUNO;
 
+//pq turma foi passado como endereço?
+// se passasse o valor de turma só por referência, a linha 20 seria if((*mat[i]->turma) == turma){ ???
 float media_geral(TALUNO **mat, int n, char *turma){
     float media = 0;
     int cont = 0;
     for(int i = 0; i < n; i++){
-        if ((*mat[i] ->turma) == (*turma)){
+        if (strcmp(mat[i]->turma,turma) == 0){
             media += ((mat[i]->p1)+(mat[i]->p2))/2;
             cont += 1;
         }
@@ -36,6 +39,9 @@ int main(){
 
 
     TALUNO **mat_de_alunos = (TALUNO**)malloc(sizeof(TALUNO*)*n);
+    printf("%d", sizeof(TALUNO*));
+    printf("%d", sizeof(TALUNO*));
+
 
     for(int i = 0; i < n; i++){
         mat_de_alunos[i] = (TALUNO*)malloc(sizeof(TALUNO));

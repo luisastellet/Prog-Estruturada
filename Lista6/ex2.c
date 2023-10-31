@@ -37,6 +37,7 @@ int main(){
 
     for(int i = 0; i < n; i++){
         mat_de_alunos[i] = (TALUNO*)malloc(sizeof(TALUNO));
+        //int *vetor = (int*)malloc(sizeof(int)*n);
 
         printf("Digite o nome do aluno: ");
         scanf("%s", mat_de_alunos[i]->nome);
