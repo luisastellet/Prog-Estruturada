@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/luisa/Meu Drive/UFF/2_periodo/Programação Estruturada",
+      "program": "c:/Users/luisa/Meu Drive/UFF/2_periodo/Programação Estruturada/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
