@@ -68,7 +68,7 @@ int main(){
     int i, j;
 
     //Alocando a matriz dinamicamente
-    int **mat = (int**)malloc(sizeof(int)*9);
+    int **mat = (int**)malloc(sizeof(int*)*9);
 
     for(i=0; i<9; i++){
         mat[i] = (int*)malloc(sizeof(int)*9);

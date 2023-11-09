@@ -9,7 +9,7 @@
 
 //declarando a struct
 typedef struct retangulo{
-        int x, y;
+    int x, y;
 }TPTO2D;
 
 //criando a função

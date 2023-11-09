@@ -17,9 +17,11 @@ int cic (char *str1, char *str2){
         int ver=1;
         if(str2[i] == str1[0]){
             inicio=i+1;
-            for(int j=1; j<strlen(str2); j++){ //indice da pequena
-                if((int)str1[j] != (int)str2[inicio]){
-                    ver = 0; //deu merda
+
+            for(int j=1; j<strlen(str1); j++){ //indice da pequena
+
+                if(str1[j] != str2[inicio]){
+                    ver = 0; 
                     break;
                 }
                 inicio++;
