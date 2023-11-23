@@ -39,7 +39,10 @@ int main(void){
   printf("\n");
 
   printf("Agora o resultado da funcao criada: ");
-  TLSE_imprime(copia(l));
+  TLSE *tmp = copia(l);
+  TLSE_imprime(tmp);
+  TLSE_libera(l);
+  TLSE_libera(tmp);
 
   return 0;
 }

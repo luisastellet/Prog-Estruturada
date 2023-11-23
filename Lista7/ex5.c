@@ -58,6 +58,7 @@ int main(void){
     TLSE * resp = rto(l, elem);
     TLSE_imprime(resp);
     TLSE_libera(resp);
+    TLSE_libera(l);
 
     return 0;
 }

@@ -13,7 +13,6 @@
 TLSE* i_p (TLSE *l){
     TLSE * par = TLSE_inicializa();
     TLSE * impar = TLSE_inicializa();
-    TLSE * resultado = TLSE_inicializa();
 
     TLSE * p = l, * p_par = par, * p_impar = impar;
     //preenchendo as listas impar e par
@@ -64,5 +63,6 @@ int main(void){
     printf("Agora o resultado da funcao criada: ");
     TLSE * resp = i_p(l);
     TLSE_imprime(resp);
+    TLSE_libera(resp);
     return 0;
 }

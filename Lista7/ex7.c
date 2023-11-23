@@ -14,9 +14,17 @@ void i_p (TLSE *l){
         else break;
     }
     //p sai guardando o ponteiro do primeiro ímpar da lista, logo o primeiro elemento da lista
-    l = p;
-    TLSE *p_impar = p; //sai do primeiro ímpar
+    TLSE *p_impar = p->prox; //sai do primeiro ímpar
+    while(p_impar->prox){
+        if(p_impar-> info % 2 != 0){ //é ímpar
+            p->prox = p_impar;
+            p = p_impar;
+        }
+        p_impar = p_impar->prox;
+    }
+    //p sai apontando pro último ímpar e p_impar sai apontando pra null;
 
+    // !!! l = p; isso tem q vir depois, pra n perder quem veio antes
 
 }
 

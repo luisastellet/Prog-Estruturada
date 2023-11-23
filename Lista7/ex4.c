@@ -7,11 +7,11 @@
 // inalterada. O protótipo da função é o seguinte: TLSE *copia (TLSE *l).
 
 TLSE * insere_fim(TLSE *l, int x){
-    TLSE * novo = (TLSE*)malloc(sizeof(TLSE));
-    
-    novo -> info = x;
-    novo -> prox = NULL;
-    return novo;
+  TLSE * novo = (TLSE*)malloc(sizeof(TLSE));
+  
+  novo -> info = x;
+  novo -> prox = NULL;
+  return novo;
 }
 
 TLSE *copia (TLSE *l){

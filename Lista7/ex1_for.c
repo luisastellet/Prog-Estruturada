@@ -26,11 +26,8 @@ void inverte (TLSE* l){
   p = l;
   int posicao = 1;
   while(p){
-
     int cont_aux = posicao;
     TLSE * final = p;
-
-
     while(cont_aux < cont){
       final = final -> prox;
       cont_aux++;
@@ -49,6 +46,7 @@ void inverte (TLSE* l){
     p = p->prox;
 
   }
+  
   return;
 }
 
