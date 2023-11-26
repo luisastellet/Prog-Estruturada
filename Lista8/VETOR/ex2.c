@@ -9,18 +9,17 @@ TF* inv_fila (TF *f){
     TP * pilha_aux = TP_inicializa();
     TF * fila_final = TF_inicializa();
 
-    while(f->n >0){
+    while(!TF_vazia(f)){
         int x = TF_retira(f);
         TP_push(pilha_aux,x);
     }
 
-    while(pilha_aux->topo){
+    while(TP_vazia(pilha_aux)){
         int x = TP_pop(pilha_aux);
         TF_insere(fila_final, x);
     }
 
     TP_libera(pilha_aux);
-
     return fila_final;
 }
 

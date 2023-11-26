@@ -10,19 +10,18 @@ TP* f2p (TF *f){
     TP * pilha_resp = TP_inicializa();
 
     //criando a pilha aux
-    while(f->n > 0){
+    while(!TF_vazia(f)){
         int x = TF_retira(f);
         TP_push(pilha_aux, x);
     }
 
     //Criando a pilha resposta
-    while(pilha_aux->topo){
+    while(!TP_vazia(pilha_aux)){
         int y = TP_pop(pilha_aux);
         TP_push(pilha_resp, y);
     }
 
     TP_libera(pilha_aux);
-
     return pilha_resp;
 }
 

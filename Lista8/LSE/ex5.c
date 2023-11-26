@@ -6,13 +6,13 @@ pilha p deve ser o primeiro inteiro a sair da fila. Não é possível alterar a 
 da pilha de entrada. A função deve obedecer o seguinte protótipo: TFila* p2f (TPilha *p).*/
 
 TF* p2f (TP *p){
-    TF * fila = TF_inicializa();
-    while(p->topo){
-        int x = TP_pop(p);
-        TF_insere(fila, x);
-    }
+  TF * fila = TF_inicializa();
+  while(p->topo){
+      int x = TP_pop(p);
+      TF_insere(fila, x);
+  }
 
-    return fila;
+  return fila;
 }
 
 

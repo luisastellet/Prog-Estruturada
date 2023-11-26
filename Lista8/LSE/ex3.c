@@ -7,20 +7,34 @@ função deve obedecer ao seguinte protótipo: TFila* Junta_Filas (TFila *f1, TF
 
 TF* Junta_Filas (TF *f1, TF *f2){
     TF * resp = TF_inicializa();
-    TLSE * p_f1 = f1->ini;
-    TLSE * p_f2 = f2->ini;
+    TF * f1_aux = TF_inicializa();
+    TF * f2_aux = TF_inicializa();
 
-    while(p_f1){
-        int x = p_f1->info;
+    while(!TF_vazia(f1)){
+        int x = TF_retira(f1);
+        TF_insere(f1_aux, x);
         TF_insere(resp, x);
-        p_f1 = p_f1->prox;
     }
 
-    while(p_f2){
-        int x = p_f2->info;
-        TF_insere(resp, x);
-        p_f2 = p_f2->prox;
+    while(!TF_vazia(f1_aux)){
+        int y = TF_retira(f1_aux);
+        TF_insere(f1, y);
     }
+
+    TF_libera(f1_aux);
+
+    while(!TF_vazia(f2)){
+        int x = TF_retira(f2);
+        TF_insere(f2_aux, x);
+        TF_insere(resp, x);
+    }
+
+    while(!TF_vazia(f2_aux)){
+        int y = TF_retira(f2_aux);
+        TF_insere(f2, y);
+    }
+
+    TF_libera(f2_aux);
 
     return resp;
 }

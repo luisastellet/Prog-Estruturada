@@ -9,12 +9,12 @@ TP* f2p (TF *f){
     TP *pilha_aux = TP_inicializa();
     TP *pilha_resp = TP_inicializa();
 
-    while(f->fim){
+    while(!TF_vazia(f)){
         int x = TF_retira(f);
         TP_push(pilha_aux, x);
     }
 
-    while(pilha_aux->topo){
+    while(!TP_vazia(pilha_aux)){
         int x = TP_pop(pilha_aux);
         TP_push(pilha_resp, x);
     }
