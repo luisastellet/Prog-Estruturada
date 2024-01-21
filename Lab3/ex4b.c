@@ -8,7 +8,7 @@ void troca (TLSE *l, int N1, int N2){
     TLSE * p_original = l;
     TLSE * p_copia = copia;
 
-    //fazendo a priemira inserção no início
+    //fazendo a primeira inserção no início
     copia = TLSE_insere(copia, l->info);
     p_original= p_original->prox;
     p_copia = copia;
@@ -21,16 +21,18 @@ void troca (TLSE *l, int N1, int N2){
     }
 
     p_original = l; p_copia = copia;
-    TLSE * q_original = p_original->prox;
-    TLSE * q_copia = q_copia->prox;
-    while(q_original){
+    TLSE * q_original;
+    TLSE * q_copia;
+    while(p_original){
         if(p_copia->info == N1){
+            q_original = p_original->prox;
+            q_copia = p_copia->prox;
             while(q_copia){
                 if(q_copia->info == N2){
                     int tmp = q_original->info;
                     q_original->info = p_original->info;
                     p_original->info = tmp;
-                    q_copia->info = -1;
+                    q_copia->info = N1+N2;
                     p_copia->info = -1; 
                     //já achei o n2 para esse n1
                     break;
@@ -40,8 +42,10 @@ void troca (TLSE *l, int N1, int N2){
                 }
             } 
         }else if(p_copia->info == N2){
+            q_original = p_original->prox;
+            q_copia = p_copia->prox;
             while(q_copia){
-                if(q_copia->info == N2){
+                if(q_copia->info == N1){
                     int tmp = q_original->info;
                     q_original->info = p_original->info;
                     p_original->info = tmp;
@@ -68,7 +72,6 @@ int main(void){
     int n, n1, n2;
     printf("Digite N1: ");
     scanf("%d", &n1);
-    printf("\n");
     printf("Digite o N2: ");
     scanf("%d", &n2);
 
@@ -78,6 +81,7 @@ int main(void){
         if(n < 0) break;
         l = TLSE_insere(l, n);
     }
+
     printf("A lista original eh: \n");
     TLSE_imprime(l); 
     printf("\n");
